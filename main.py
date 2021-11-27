@@ -1,7 +1,8 @@
 import random
 odd = "----" * 10
-users = tuple(("bob","ann","mike","liz"))
-password = tuple(("123","pass123","password123","pass123"))
+usspass = {'bob':'123','ann':'pass123','mike':'password123','liz':'pass123'} #definice přihlašovacích údajů
+#users = {"bob","ann","mike","liz"}
+#password = {"123","pass123","password123","pass123"}
 TEXTS = ['''
 Situated about 10 miles west of Kemmerer, 
 Fossil Butte is a ruggedly impressive 
@@ -36,7 +37,7 @@ garpike and stingray are also present.'''
 login = input("Zadej přihlašovací jméno: ")
 log_pass = input("Zadej heslo: ")
 
-if (login in users) and log_pass in password:
+if usspass.get(login) == log_pass:
     print(odd)
     print("Prohlášení proběhlo úspěšně!")
     print(odd)
