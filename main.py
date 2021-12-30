@@ -85,33 +85,6 @@ if choose == '1': ## TEXT 1
                 pocet_num += 1
         print(f"Počet čísel je {pocet_num}")
 
-    # VYPSÁNÍ SUMY VŠECH ČÍSEL V TEXTU
-        all_num = list()
-        for i in TEXTS:
-            rozdel_vse = i.split(" ")
-            for i in rozdel_vse:
-                if (i.isnumeric()):
-                    all_num.append(i)
-        all_num = list(map(int, all_num))
-        print("Suma všech čísel v textu je: ", sum(all_num))
-
-
-#NÁHODNÁ SLOVA V TEXTU (předdefinovaný počet 11-ti slov)
-        rozdel = TEXTS[0].split(" ")  # rozdělení stringu na jednotlivá slova v listu
-        print(odd)
-        print("LEN","OCCURENCES".center(30),"NR.")
-        print(odd)
-        x = str(11)
-        for a in rozdel:
-            if a < x:
-                x=int(11)
-                for a in range (1,x):
-                    nahodny = random.choice(rozdel)
-                    delka = len(nahodny)
-                    print(a,(len(nahodny)*'*').center(30),len(nahodny), sep='\t')
-                break
-
-
 elif choose == '2': ## TEXT 2
         ## POČET MEZER
         pocet_m = 0
@@ -150,32 +123,6 @@ elif choose == '2': ## TEXT 2
             if (i.isnumeric()):
                 pocet_num += 1
         print(f"Počet čísel je {pocet_num}")
-
-        # VYPSÁNÍ SUMY VŠECH ČÍSEL V TEXTU
-        all_num = list()
-        for i in TEXTS:
-            rozdel_vse = i.split(" ")
-            for i in rozdel_vse:
-                if (i.isnumeric()):
-                    all_num.append(i)
-        all_num = list(map(int, all_num))
-        print("Suma všech čísel v textu je: ", sum(all_num))
-
-        # NÁHODNÁ SLOVA V TEXTU (předdefinovaný počet 11-ti slov)
-        rozdel = TEXTS[0].split(" ")  # rozdělení stringu na jednotlivá slova v listu
-        print(odd)
-        print("LEN", "OCCURENCES".center(30), "NR.")
-        print(odd)
-        x = str(11)
-        for a in rozdel:
-            if a < x:
-                x = int(11)
-                for a in range(1, x):
-                    nahodny = random.choice(rozdel)
-                    delka = len(nahodny)
-                    print(a, (len(nahodny) * '*').center(30), len(nahodny), sep='\t')
-                break
-
 
 
 elif choose == '3': ##TEXT 3
@@ -216,40 +163,30 @@ elif choose == '3': ##TEXT 3
             if (i.isnumeric()):
                 pocet_num += 1
         print(f"Počet čísel je {pocet_num}")
-
-        # VYPSÁNÍ SUMY VŠECH ČÍSEL V TEXTU
-        all_num = list()
-        for i in TEXTS:
-            rozdel_vse = i.split(" ")
-            for i in rozdel_vse:
-                if (i.isnumeric()):
-                    all_num.append(i)
-        all_num = list(map(int, all_num))
-        print("Suma všech čísel v textu je: ", sum(all_num))
-
-        # NÁHODNÁ SLOVA V TEXTU (předdefinovaný počet 11-ti slov)
-        rozdel = TEXTS[0].split(" ")  # rozdělení stringu na jednotlivá slova v listu
-        print(odd)
-        print("LEN", "OCCURENCES".center(30), "NR.")
-        print(odd)
-        x = str(11)
-        for a in rozdel:
-            if a < x:
-                x = int(11)
-                for a in range(1, x):
-                    nahodny = random.choice(rozdel)
-                    delka = len(nahodny)
-                    print(a, (len(nahodny) * '*').center(30), len(nahodny), sep='\t')
-                break
-
-
 else:
         print("Ve zvoleném nic není.")
 
+# VYPSÁNÍ SUMY VŠECH ČÍSEL V TEXTU
+all_num = list()
+rozdel_vse = TEXTS[int(choose)-1].split(" ")
+       # for i in TEXTS[int(choose)]:
+for i in rozdel_vse:
+    if i.isnumeric():
+        all_num.append(i)
+        all_num = list(map(int, all_num))
+print("Suma všech čísel v textu je: ", sum(all_num))
 
 
-
-
-
-
-
+        # NÁHODNÁ SLOVA V TEXTU (předdefinovaný počet slov)
+rozdel_to = TEXTS[int(choose)-1].split(" ")  # rozdělení stringu na jednotlivá slova v listu
+print(odd)
+print("LEN","OCCURENCES".center(30),"NR.")
+print(odd)
+x = str(11)
+for a in rozdel_to:
+    x=int(11)
+    for a in range(1,x):
+        nahodny = random.choice(rozdel_to)
+        delka = len(nahodny)
+        print(a,(len(nahodny)*'S').center(30),len(nahodny), sep='\t')
+    break
