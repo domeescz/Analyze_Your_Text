@@ -1,4 +1,5 @@
 import random
+
 odd = "----" * 10
 usspass = {'bob':'123','ann':'pass123','mike':'password123','liz':'pass123'} #definice přihlašovacích údajů
 #users = {"bob","ann","mike","liz"}
@@ -178,15 +179,18 @@ print("Suma všech čísel v textu je: ", sum(all_num))
 
 
         # NÁHODNÁ SLOVA V TEXTU (předdefinovaný počet slov)
-rozdel_to = TEXTS[int(choose)-1].split(" ")  # rozdělení stringu na jednotlivá slova v listu
+import pprint
+for a in TEXTS:
+    rozdel_to = a.split(" ")
 print(odd)
-print("LEN","OCCURENCES".center(30),"NR.")
+print(f"{'LEN|': <3}{'OCCURENCES': ^15}{'|NR.'}")
 print(odd)
 x = str(11)
 for a in rozdel_to:
-    x=int(11)
-    for a in range(1,x):
-        nahodny = random.choice(rozdel_to)
-        delka = len(nahodny)
-        print(a,(len(nahodny)*'S').center(30),len(nahodny), sep='\t')
-    break
+    if a < str(x):
+        for a in range(1,int(x)):
+            nahodny = random.choice(rozdel_to)
+            delka = len(nahodny)
+            delka_z = delka * '*'
+            print(f"{a: <3}|{delka_z: <15}|{delka}")
+        break
